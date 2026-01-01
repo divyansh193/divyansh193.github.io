@@ -15,7 +15,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <style>
-
             body {
                 margin: 0;
                 background-color: rgba(189, 14, 14, 0.438);
@@ -28,14 +27,30 @@
                 width: 100px;
                 text-align:center;
             }
-            
+
+            h2 {
+                color: red;
+            }
+
+            #divyansh {
+                color: green;
+            }
 
         </style>
     </head>
+
     <body>
+
+        <input type="number" id="number-input-box" value="1" placeholder="Enter the number"/>
+        <p id="result"></p>
+
+
         <h1>This is<br> Div <br>web!</h1>
-        <h2>About Me</h2>
+        
+        <h2 id="divyansh">About Me</h2>
+
         <p>My name is Divyansh. I am making my first website today </p>
+
         <h2>Address</h2>
         <p>kanaka nagar</p>    
         <h2>Hobbies</h2>  
@@ -46,4 +61,20 @@
         </ol>
         <img src="https://raw.githubusercontent.com/divyansh193/divyansh193.github.io/refs/heads/main/ogimg.jpeg">
     </body>
+
+    <script>        
+        document.getElementById("number-input-box").onkeyup = (ev) => {
+            let number = parseInt(ev.target.value);
+            if(number%2==0){
+                document.getElementById("result").innerHTML="number is even"
+                document.getElementsByTagName("body")[0].style.backgroundColor = "blue";
+                document.getElementsByTagName("img")[0].style.filter = "grayscale(100%)";
+            }
+            else{
+                document.getElementById("result").innerHTML="number is odd"
+document.getElementsByTagName("body")[0].style.backgroundColor = "yellow";
+document.getElementsByTagName("img")[0].style.filter = "grayscale(0%)";
+            }
+        }
+    </script>
 </html>
